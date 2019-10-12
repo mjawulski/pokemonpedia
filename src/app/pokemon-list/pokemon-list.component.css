@@ -1,0 +1,48 @@
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.old-school-font {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.old-school-font.medium {
+  font-size: 0.7em;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-card {
+  min-width: 160px;
+  min-height: 100px;
+  margin: 10px;
+}
+
+.pokemon-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.solid-footer {
+  text-align: center;
+  font-size: 0.75em;
+  color: white;
+  padding: 5px;
+}
+
+.electric {
+  background-color: #f8d030;
+}
+
+.grass {
+  background-color: #78c850;
+}
+
+.fire {
+  background-color: #f08030;
+}
