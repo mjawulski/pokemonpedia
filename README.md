@@ -1,27 +1,20 @@
 # Pokemonpedia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+![pokemonpedia logo](https://github.com/mjawulski/pokemonpedia/blob/update-readme-md/src/assets/large-logo.png?raw=true)
 
-## Development server
+Aplikacja Angular przedstawiająca encyklopedię pokemonów.
+Jest rozwijana w ramach cyklu artykułów w magazynie Programista Junior (https://programistajr.pl/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Cykl składa się z 5 części.
 
-## Code scaffolding
+1. Wprowadzenie. Instalacja i konfiguracja środowiska programistycznego. Stworzenie szkieletu aplikacji.
+2. Implementacja podstawowych funkcjonalności. Wprowadzenie do technologii webowych (HTML, CSS, Angular).
+3. Komponenty, stylowanie, nawigacja i wykorzystanie API.
+4. Wdrożenie aplikacji.
+5. Przygotowanie wersji na telefony komórkowe.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Aktualnie w kioskach znajduje się część 1.
 
-## Build
+Repozytorium branch master zawiera część 2.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Stronę można zobaczyć tutaj: https://mjawulski.github.io/pokemonpedia/
