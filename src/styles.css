@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+mat-toolbar .pokemon-font,
+mat-card .pokemon-font {
+  font-family: 'Press Start 2P', cursive;
+}
