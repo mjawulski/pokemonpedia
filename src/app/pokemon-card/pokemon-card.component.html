@@ -1,0 +1,9 @@
+<mat-card class="pokemon-card">
+  <mat-card-header>
+    <mat-card-title class="pokemon-font pokemon-name">{{ pokemon.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="pokemon.avatarUrl" />
+  <mat-card-footer class="pokemon-type pokemon-font" [ngClass]="getCssClass(pokemon.type)">
+    {{ pokemon.type }}
+  </mat-card-footer>
+</mat-card>

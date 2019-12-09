@@ -2,31 +2,3 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-.pokemon-card {
-  width: 10em;
-  margin: 10px;
-}
-
-.pokemon-name {
-  font-size: 15px;
-}
-
-.pokemon-type {
-  text-align: center;
-  font-size: 0.75em;
-  color: white;
-  padding: 5px;
-}
-
-.electric {
-  background-color: #f8d030;
-}
-
-.grass {
-  background-color: #78c850;
-}
-
-.fire {
-  background-color: #f08030;
-}
