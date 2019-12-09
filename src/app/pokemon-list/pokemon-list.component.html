@@ -1,3 +1,11 @@
 <div class="pokemon-list">
-  <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-card>
+  <app-pokemon-card *ngFor="let pokemon of (pokemons$ | async)?.pokemons" [pokemon]="pokemon"></app-pokemon-card>
+  <div>
+    <mat-paginator
+      [length]="(pokemons$ | async)?.count"
+      pageSize="20"
+      [pageSizeOptions]="[20]"
+      (page)="fetchNew($event)"
+    ></mat-paginator>
+  </div>
 </div>

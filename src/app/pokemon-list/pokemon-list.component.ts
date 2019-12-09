@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon, PokemonType } from '../pokemon-card/pokemon.model';
+import { PokemonGeneralInfo, PokemonType } from '../pokemon-card/pokemon.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, merge } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { stringify } from '@angular/compiler/src/util';
+import { PokemonList } from './pokemon-list.model';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,29 +12,31 @@ import { stringify } from '@angular/compiler/src/util';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: Pokemon[];
-  pokemons$: Observable<Pokemon[]>;
+  pokemons$: Observable<PokemonList>;
 
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
-    this.pokemons = [
-      {
-        name: 'Pikachu',
-        avatarUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
-        type: PokemonType.ELECTRIC
-      },
-      {
-        name: 'Bulbasaur',
-        avatarUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-        type: PokemonType.GRASS
-      },
+    this.pokemons$ = this.httpClient.get('https://pokeapi.co/api/v2/pokemon').pipe(
+      map<{ results: PokemonGeneralInfo[]; count: number }, PokemonList>(response => {
+        return {
+          count: response.count,
+          pokemons: response.results
+        };
+      })
+    );
+  }
 
-      {
-        name: 'Charmander',
-        avatarUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-        type: PokemonType.FIRE
-      }
-    ];
+  fetchNew(page) {
+    this.pokemons$ = this.httpClient
+      .get('https://pokeapi.co/api/v2/pokemon?offset=' + page.pageIndex * 20 + '&limit=20')
+      .pipe(
+        map<{ results: PokemonGeneralInfo[]; count: number }, PokemonList>(response => {
+          return {
+            count: response.count,
+            pokemons: response.results
+          };
+        })
+      );
   }
 }

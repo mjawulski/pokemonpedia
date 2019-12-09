@@ -1,18 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon, PokemonType } from './pokemon.model';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { PokemonGeneralInfo, PokemonType, PokemonCard } from './pokemon.model';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css']
 })
-export class PokemonCardComponent implements OnInit {
+export class PokemonCardComponent implements OnInit, OnChanges {
   @Input()
-  pokemon: Pokemon;
+  pokemon: PokemonGeneralInfo;
 
-  constructor() {}
+  pokemonCard$: Observable<PokemonCard>;
 
-  ngOnInit() {}
+  constructor(private httpClient: HttpClient) {}
+
+  ngOnInit() {
+    // console.log(this.pokemon);
+    this.pokemonCard$ = this.httpClient.get<any>(this.pokemon.url).pipe(
+      map<any, PokemonCard>(response => {
+        return {
+          name: response.name,
+          avatarUrl: response.sprites.front_default
+        };
+      })
+    );
+  }
+
+  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {}
 
   getCssClass(pokemonType: PokemonType) {
     switch (pokemonType) {
