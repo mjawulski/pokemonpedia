@@ -6,10 +6,5 @@ export interface PokemonGeneralInfo {
 export interface PokemonCard {
   name: string;
   avatarUrl: string;
-}
-
-export enum PokemonType {
-  GRASS = 'trawiasty',
-  ELECTRIC = 'elektryczny',
-  FIRE = 'ognisty'
+  type: string;
 }

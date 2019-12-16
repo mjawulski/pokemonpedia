@@ -2,8 +2,14 @@
   <mat-card-header>
     <mat-card-title class="pokemon-font pokemon-name">{{ (pokemonCard$ | async)?.name }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="(pokemonCard$ | async)?.avatarUrl" />
-  <!-- <mat-card-footer class="pokemon-type pokemon-font" [ngClass]="getCssClass(pokemon.type)">
-    {{ pokemon.type }}
-  </mat-card-footer> -->
+  <mat-spinner *ngIf="!(pokemonCard$ | async)?.name"></mat-spinner>
+  <img mat-card-image *ngIf="(pokemonCard$ | async)?.avatarUrl" [src]="(pokemonCard$ | async)?.avatarUrl" />
+  <img mat-card-image *ngIf="!(pokemonCard$ | async)?.avatarUrl" src="../../assets/pokeball.png" />
+  <mat-card-footer
+    *ngIf="(pokemonCard$ | async)?.type"
+    class="pokemon-type pokemon-font"
+    [ngClass]="(pokemonCard$ | async)?.type"
+  >
+    {{ getPolishType((pokemonCard$ | async)?.type) }}
+  </mat-card-footer>
 </mat-card>
