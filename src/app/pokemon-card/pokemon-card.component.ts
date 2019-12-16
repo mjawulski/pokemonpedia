@@ -1,24 +1,25 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { PokemonGeneralInfo, PokemonCard } from './pokemon.model';
+import { PokemonDetailsUrl, PokemonCard } from './pokemon.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { PokemonsService } from '../pokemons.service';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css']
 })
-export class PokemonCardComponent implements OnInit, OnChanges {
+export class PokemonCardComponent implements OnInit {
   @Input()
-  pokemon: PokemonGeneralInfo;
+  pokemonDetailsUrl: PokemonDetailsUrl;
 
   pokemonCard$: Observable<PokemonCard>;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private pokemonsService: PokemonsService) {}
 
   ngOnInit() {
-    this.pokemonCard$ = this.httpClient.get<any>(this.pokemon.url).pipe(
+    this.pokemonCard$ = this.pokemonsService.fetchPokemonDetails(this.pokemonDetailsUrl.url).pipe(
       map<any, PokemonCard>(response => {
         return {
           name: response.name,
@@ -28,8 +29,6 @@ export class PokemonCardComponent implements OnInit, OnChanges {
       })
     );
   }
-
-  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {}
 
   getPolishType(pokemonType: string) {
     switch (pokemonType) {

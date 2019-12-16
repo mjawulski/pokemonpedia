@@ -1,5 +1,8 @@
 <div class="pokemon-list">
-  <app-pokemon-card *ngFor="let pokemon of (pokemons$ | async)?.pokemons" [pokemon]="pokemon"></app-pokemon-card>
+  <app-pokemon-card
+    *ngFor="let pokemon of (pokemons$ | async)?.results"
+    [pokemonDetailsUrl]="pokemon"
+  ></app-pokemon-card>
   <div>
     <mat-paginator
       [length]="(pokemons$ | async)?.count"
