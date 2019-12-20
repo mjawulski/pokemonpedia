@@ -1,0 +1,11 @@
+<mat-card class="pokemon-card" *ngIf="pokemon && pokemon.name">
+  <mat-card-header>
+    <mat-card-title class="pokemon-font pokemon-name">{{
+      pokemon.name
+    }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="pokemon.imageUrl" />
+  <mat-card-footer class="pokemon-type electric pokemon-font">
+    {{ pokemon.type }}
+  </mat-card-footer>
+</mat-card>
