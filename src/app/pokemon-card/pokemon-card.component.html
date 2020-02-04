@@ -5,7 +5,7 @@
     }}</mat-card-title>
   </mat-card-header>
   <img mat-card-image [src]="pokemon.imageUrl || defaultImageSrc" />
-  <mat-card-footer class="pokemon-type electric pokemon-font">
-    {{ pokemon.type }}
+  <mat-card-footer class="pokemon-type pokemon-font" [ngClass]="pokemon.type">
+    {{ pokemon.polishType }}
   </mat-card-footer>
 </mat-card>

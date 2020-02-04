@@ -22,7 +22,8 @@ export class PokemonCardComponent implements OnInit {
     this.httpClient.get<any>(this.cardData.url).subscribe(response => {
       this.pokemon = {
         name: response.name,
-        type: this.translateTypeName(response.types[0].type.name),
+        polishType: this.translateTypeName(response.types[0].type.name),
+        type: response.types[0].type.name,
         imageUrl: response.sprites.front_default
       };
     });
