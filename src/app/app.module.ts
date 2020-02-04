@@ -11,6 +11,7 @@ import { MatCardModule } from "@angular/material/card";
 import { PokemonCardComponent } from "./pokemon-card/pokemon-card.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [AppComponent, PokemonListComponent, PokemonCardComponent],
