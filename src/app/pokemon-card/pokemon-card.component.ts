@@ -14,11 +14,14 @@ export class PokemonCardComponent implements OnInit {
 
   pokemon: Pokemon;
 
+  isLoading = false;
+
   defaultImageSrc = "../../assets/pokeball.png";
 
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.httpClient.get<any>(this.cardData.url).subscribe(response => {
       this.pokemon = {
         name: response.name,
@@ -27,6 +30,10 @@ export class PokemonCardComponent implements OnInit {
         imageUrl: response.sprites.front_default
       };
     });
+  }
+
+  imageLoaded() {
+    this.isLoading = false;
   }
 
   translateTypeName(type: string): string {

@@ -11,7 +11,7 @@ import { MatCardModule } from "@angular/material/card";
 import { PokemonCardComponent } from "./pokemon-card/pokemon-card.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { RouterModule } from "@angular/router";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [AppComponent, PokemonListComponent, PokemonCardComponent],
@@ -23,7 +23,8 @@ import { RouterModule } from "@angular/router";
     MatToolbarModule,
     MatCardModule,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
