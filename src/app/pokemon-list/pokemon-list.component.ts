@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { map, switchMap, tap } from "rxjs/operators";
+import { map, switchMap } from "rxjs/operators";
 import { FetchedPokemonList } from "./fetched-pokemon-list.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PokemonsService } from "../pokemons.service";
@@ -22,8 +22,6 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit() {
     this.currentPage$ = this.route.params.pipe(map(params => params.page));
-
-    this.route.params.pipe(tap(params => console.log(params)));
 
     this.pokemons$ = this.route.params.pipe(
       switchMap(params => {
