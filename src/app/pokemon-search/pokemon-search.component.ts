@@ -33,7 +33,13 @@ export class PokemonSearchComponent implements OnInit {
             this.pokemon = {
               name: pokemonData.name,
               type: pokemonData.types[0].type.name,
-              imageUrl: pokemonData.sprites.front_default
+              imageUrl: pokemonData.sprites.front_default,
+              stats: pokemonData.stats.map(stat => {
+                return {
+                  name: stat.stat.name,
+                  value: stat.base_stat
+                };
+              })
             };
           },
           error => {

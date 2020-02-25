@@ -10,6 +10,15 @@
     [src]="pokemon.imageUrl || defaultImageSrc"
     (load)="imageLoaded()"
   />
+  <mat-card-content class="pokemon-font">
+    <h3>statystyki</h3>
+    <table class="stats-table">
+      <tr *ngFor="let stat of pokemon.stats">
+        <td>{{ stat.name }}</td>
+        <td>{{ stat.value }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
 </mat-card>
 
 <mat-card class="centered pokemon-font not-found-card" *ngIf="!pokemonExists">
