@@ -3,3 +3,16 @@
   top: 0;
   z-index: 1;
 }
+.search-pokemon-form-field {
+  width: 200px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.search-label {
+  margin-top: 1.5em;
+  display: inline-block;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

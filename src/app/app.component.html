@@ -1,5 +1,30 @@
 <mat-toolbar color="primary">
   <h3 class="pokemon-font">pokemonpedia</h3>
+  <span class="spacer"></span>
+  <form (ngSubmit)="onSubmit()">
+    <label for="searchInput" class="pokemon-font search-label"
+      >szukaj pokemona:</label
+    >
+    <mat-form-field class="search-pokemon-form-field">
+      <input
+        matInput
+        type="text"
+        name="searchInput"
+        [(ngModel)]="searchInput"
+        autocomplete="off"
+      />
+      <button
+        mat-button
+        *ngIf="searchInput"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="onSubmit()"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

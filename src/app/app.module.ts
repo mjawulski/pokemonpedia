@@ -12,9 +12,20 @@ import { PokemonCardComponent } from "./pokemon-card/pokemon-card.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { PokemonSearchComponent } from "./pokemon-search/pokemon-search.component";
+import { FormsModule } from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
-  declarations: [AppComponent, PokemonListComponent, PokemonCardComponent],
+  declarations: [
+    AppComponent,
+    PokemonListComponent,
+    PokemonCardComponent,
+    PokemonSearchComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +35,12 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     MatCardModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatIconModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

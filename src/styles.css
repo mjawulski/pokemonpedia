@@ -4,7 +4,21 @@ body {
   padding: 0;
 }
 
-mat-toolbar .pokemon-font,
-mat-card .pokemon-font {
-  font-family: 'Press Start 2P', cursive;
+mat-card-title.pokemon-font,
+mat-card-footer.pokemon-font,
+h3.pokemon-font,
+label.pokemon-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+.pokemon-card {
+  width: 12em;
+  margin: 10px;
+}
+
+.pokemon-name {
+  font-size: 15px;
+}
+.mat-spinner {
+  margin: auto;
 }
