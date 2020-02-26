@@ -1,10 +1,10 @@
-<mat-card class="pokemon-card centered" *ngIf="pokemonExists">
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card class="pokemon-card centered" *ngIf="pokemonExists && !isLoading">
   <mat-card-header>
     <mat-card-title class="pokemon-font pokemon-name">{{
       pokemon.name
     }}</mat-card-title>
   </mat-card-header>
-  <mat-spinner *ngIf="isLoading"></mat-spinner>
   <img
     mat-card-image
     [src]="pokemon.imageUrl || defaultImageSrc"
@@ -21,6 +21,9 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="centered pokemon-font not-found-card" *ngIf="!pokemonExists">
+<mat-card
+  class="centered pokemon-font not-found-card"
+  *ngIf="!pokemonExists && !isLoading"
+>
   NIESTETY NIE ZNALEZIONO POKEMONA O NAZWIE: {{ inputPokemonName }}
 </mat-card>

@@ -16,3 +16,8 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
