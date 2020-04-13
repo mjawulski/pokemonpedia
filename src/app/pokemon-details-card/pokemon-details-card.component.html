@@ -1,0 +1,21 @@
+<mat-card class="centered" *ngIf="pokemonExists">
+  <mat-card-header>
+    <mat-card-title class="pokemon-font">{{ pokemon.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="pokemon.imageUrl || defaultImageSrc" />
+  <mat-card-content class="pokemon-font">
+    <h3>statystyki</h3>
+    <table class="stats-table">
+      <tr *ngFor="let stat of pokemon.stats">
+        <td>{{ stat.name }}</td>
+        <td>{{ stat.value }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="centered" *ngIf="!pokemonExists">
+  <mat-card-content class="pokemon-font">
+    NIESTETY NIE ZNALEZIONO POKEMONA O NAZWIE: {{ inputPokemonName }}
+  </mat-card-content>
+</mat-card>
