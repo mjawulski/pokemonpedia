@@ -9,12 +9,12 @@ Cykl składa się z 5 części.
 
 1. Wprowadzenie. Instalacja i konfiguracja środowiska programistycznego. Stworzenie szkieletu aplikacji.
 2. Implementacja podstawowych funkcjonalności. Wprowadzenie do technologii webowych (HTML, CSS, Angular).
-3. Komponenty, stylowanie, nawigacja i wykorzystanie API. (będą 2 części: 3a i 3b)
-4. Wdrożenie aplikacji.
-5. Przygotowanie wersji na telefony komórkowe.
+3. Komponenty, stylowanie, nawigacja i wykorzystanie API.
+4. **Routing**
+5. Wdrożenie aplikacji. Przygotowanie prostej wersji na telefony komórkowe.
 
-Aktualnie w kioskach znajduje się część 2.
+Aktualnie w kioskach znajduje się część 4.
 
-Repozytorium branch master zawiera część 3.
+Repozytorium branch master zawiera część 4.
 
 Stronę można zobaczyć tutaj: https://mjawulski.github.io/pokemonpedia/
