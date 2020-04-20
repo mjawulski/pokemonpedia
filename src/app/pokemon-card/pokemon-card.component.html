@@ -8,7 +8,12 @@
       pokemon.name
     }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="pokemon.imageUrl || defaultImageSrc" />
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <img
+    mat-card-image
+    [src]="pokemon.imageUrl || defaultImageSrc"
+    (load)="imageLoaded()"
+  />
   <mat-card-footer class="pokemon-type pokemon-font" [ngClass]="pokemon.type">
     {{ pokemon.polishType }}
   </mat-card-footer>

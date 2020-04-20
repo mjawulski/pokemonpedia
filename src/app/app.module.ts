@@ -11,10 +11,16 @@ import { MatCardModule } from "@angular/material/card";
 import { PokemonCardComponent } from "./pokemon-card/pokemon-card.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { PokemonDetailsCardComponent } from './pokemon-details-card/pokemon-details-card.component';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { PokemonDetailsCardComponent } from "./pokemon-details-card/pokemon-details-card.component";
 
 @NgModule({
-  declarations: [AppComponent, PokemonListComponent, PokemonCardComponent, PokemonDetailsCardComponent],
+  declarations: [
+    AppComponent,
+    PokemonListComponent,
+    PokemonCardComponent,
+    PokemonDetailsCardComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +29,8 @@ import { PokemonDetailsCardComponent } from './pokemon-details-card/pokemon-deta
     MatToolbarModule,
     MatCardModule,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
