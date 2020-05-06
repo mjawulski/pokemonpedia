@@ -1,7 +1,7 @@
 {
   "name": "Pokemonpedia",
   "theme_color": "#f44336",
-  "background_color": "#ffffff",
+  "background_color": "#f44336",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
@@ -47,6 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
