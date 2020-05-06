@@ -1,7 +1,4 @@
 <form (ngSubmit)="onSubmit()">
-  <label for="searchInput" class="pokemon-font search-label"
-    >szukaj pokemona:</label
-  >
   <mat-form-field class="search-pokemon-form-field">
     <input
       matInput
@@ -12,7 +9,7 @@
     />
     <button
       mat-button
-      *ngIf="searchInput"
+      [disabled]="!searchInput"
       matSuffix
       mat-icon-button
       aria-label="Clear"

@@ -3,3 +3,8 @@
   top: 0;
   z-index: 1;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
